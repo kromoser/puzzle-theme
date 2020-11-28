@@ -165,3 +165,17 @@ class StarterSite extends Timber\Site {
 }
 
 new StarterSite();
+
+function puzzle_scripts() {
+	// Use jQuery from a CDN
+	wp_deregister_script('jquery');
+	wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js', array(), null, true);
+
+	// Enqueue our stylesheet and JS file with a jQuery dependency.
+	// Note that we aren't using WordPress' default style.css, and instead enqueueing the file of compiled Sass.
+	wp_enqueue_style( 'my-styles', get_template_directory_uri() . '/dist/puzzle.css', 1.0);
+	wp_enqueue_script( 'my-js', get_template_directory_uri() . '/static/js/puzzle.js', array('jquery'), '1.0.0', true );
+	//wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/dist/bootstrap.min.js', array('jquery'), '1.0.0', true );
+}
+
+add_action( 'wp_enqueue_scripts', 'puzzle_scripts' );

@@ -7,23 +7,34 @@
 {% endblock %}
 
 	<body class="{{body_class}}" data-template="base.twig">
-		<a class="skip-link screen-reader-text" href="#content">{{ _e( 'Skip to content') }}</a>
+		<a class="skip-link sr-only screen-reader-text" href="#content">{{ _e( 'Skip to content') }}</a>
 		<header class="header" >
 			{% block header %}
 				<div class="wrapper">
-					<h1 class="hdr-logo" role="banner">
+					<div class="col-10 mx-auto">
+						{% if post.get_field('puzzle_number') %}
+							{% for i in 1..post.get_field('puzzle_number') %}
+								<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+								 viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve" class="col-1">
+									<path d="M9,16.2L4.8,12l-1.4,1.4L9,19L21,7l-1.4-1.4L9,16.2z" fill="{% if loop.last %}var(--secondary){% else %}var(--primary){% endif %}"/>
+								</svg>
+							{% endfor %}
+						{% endif %}
+					</div>
+
+				{# 	<h1 class="hdr-logo" role="banner">
 						<a class="hdr-logo-link" href="{{site.url}}" rel="home">{{site.name}}</a>
 					</h1>
 					<nav id="nav-main" class="nav-main" role="navigation">
 						{% include "menu.twig" with {'items': menu.get_items} %}
-					</nav><!-- #nav -->
+					</nav><!-- #nav --> #}
 				</div>
 			{% endblock %}
 		</header>
 
-		<section id="content" role="main" class="content-wrapper">
+		<section id="content" role="main" class="container content-wrapper pt-5 mt-5">
 			{% if title %}<h1>{{title}}</h1>{% endif %}
-			<div class="wrapper {{sidebar_class}}">
+			<div class="wrapper row{{sidebar_class}}">
 				{% block content %}
 					Sorry, no content
 				{% endblock %}
@@ -36,9 +47,9 @@
 		</section>
 
 		{% block footer %}
-			<footer id="footer">
+		{# 	<footer id="footer">
 				{% include 'footer.twig' %}
-			</footer>
+			</footer> #}
 			{{ function('wp_footer') }}
 		{% endblock %}
 	</body>

@@ -1,0 +1,32 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="content-wrapper col-12">
+		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+			<section class="article-content">
+				<h1 class="article-h1">{{post.title}}</h1>
+				<div class="article-body">
+					{{post.content}}
+				</div>
+
+        <div class="hexagons col-12">
+
+            <div class="hexagon one"><p class="hexagon__letter">A</p></div>
+            <br>
+            <div class="hexagon two"><p class="hexagon__letter">B</p></div>
+            <div class="hexagon three"><p class="hexagon__letter">C</p></div>
+            <br>
+            <div class="hexagon four"><p class="hexagon__letter">D</p></div>
+            <br>
+            <div class="hexagon five"><p class="hexagon__letter">E</p></div>
+            <div class="hexagon six"><p class="hexagon__letter">F</p></div>
+            <br>
+            <div class="hexagon seven"><p class="hexagon__letter">G</p></div>
+
+        </div>
+			</section>
+		</article>
+
+		{% include "partial/components/solution.twig" %}
+	</div><!-- /content-wrapper -->
+{% endblock %}

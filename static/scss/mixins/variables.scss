@@ -1,0 +1,15 @@
+//Fonts
+@import url('https://use.typekit.net/djf5scc.css');
+
+$body-font: source-code-pro, 'source code pro', monospace;
+$display-font: lust-display, Bodoni, Baskerville, Georgia, serif;
+
+//Colors
+$dark: #131313;
+$light: #d0d0d0;
+$secondary: #7CFBAE;
+
+:root {
+  --primary: $primary;
+  --secondary: $secondary;
+}

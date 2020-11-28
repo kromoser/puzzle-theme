@@ -1,0 +1,31 @@
+.solution__input {
+  background: none;
+  border-radius: none;
+  border: none;
+  border-bottom: 2px solid $light;
+  color: $primary;
+  font-size: 2rem;
+
+
+  &:focus, &:focus + .solution__button {
+    border-bottom-color: $primary;
+    outline: none;
+  }
+}
+
+.solution__button {
+  background: none;
+  border: none;
+  border-bottom: 2px solid $light;
+  color: $light;
+  outline: none;
+
+  &:active, &:focus {
+    outline: none;
+  }
+
+  &:active {
+    color: $primary;
+  }
+
+}

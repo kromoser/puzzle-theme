@@ -1,0 +1,122 @@
+.hexagons {
+  text-align: center;
+  position: relative;
+  margin-bottom: -22rem;
+}
+
+.hexagon__row {
+
+
+
+
+}
+
+.hexagon {
+  background-color: $secondary;
+  margin-top: 5rem;
+  margin-right: 2rem;
+  width: 10.4rem;
+  height: 6rem;
+  position: relative;
+  display: inline-block;
+  transform: rotate(90deg);
+
+  &:hover {
+    background-color: darken($secondary, 30%);
+
+    &:before {
+      border-bottom-color: darken($secondary, 30%);
+    }
+
+    &:after {
+      border-top-color: darken($secondary, 30%);
+    }
+  }
+
+    .hexagon__letter {
+      transform: rotate(-90deg);
+      margin-left: -3rem;
+      color: $dark;
+      text-align: center;
+      position: relative;
+      top: 3rem;
+      font-family: $body-font;
+      font-size: 5rem;
+      top: -10%;
+      left: 35%;
+      font-weight: 900;
+      width: 80%;
+      cursor: pointer;
+
+
+    }
+
+  &:before {
+    content: " ";
+    width: 0;
+    height: 0;
+    border-bottom: 3rem solid $secondary;
+    border-left: 5.2rem solid transparent;
+    border-right: 5.2rem solid transparent;
+    position: absolute;
+    top: -3rem;
+    left: 0;
+  }
+
+  &:after {
+    content: "";
+    width: 0;
+    position: absolute;
+    bottom: -3rem;
+    left: 0;
+    border-top: 3rem solid $secondary;
+    border-left: 5.2rem solid transparent;
+    border-right: 5.2rem solid transparent;
+  }
+
+  &.two, &.three {
+    top: -5.7rem;
+  }
+
+  &.two, &.five {
+    left: -3rem;
+  }
+
+  &.three, &.six {
+    left: 3rem;
+  }
+
+
+  &.four {
+    top: -11.1rem;
+    background-color: $primary;
+
+    &:before {
+      border-bottom-color: $primary;
+    }
+
+    &:after {
+      border-top-color: $primary;
+    }
+
+    &:hover {
+      background-color: lighten($primary, 10%);
+
+      &:before {
+        border-bottom-color: lighten($primary, 10%);
+      }
+
+      &:after {
+        border-top-color: lighten($primary, 10%);
+      }
+    }
+  }
+
+  &.five, &.six {
+    top: -16.6rem;
+  }
+
+  &.seven {
+    top: -22rem;
+  }
+}
