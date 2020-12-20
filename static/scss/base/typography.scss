@@ -21,3 +21,12 @@ blockquote {
 .article-h1 {
   margin-bottom: 2rem;
 }
+
+.back-link {
+  color: $primary;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

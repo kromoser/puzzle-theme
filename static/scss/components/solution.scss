@@ -1,4 +1,4 @@
-.solution__input {
+.solution__input,  {
   background: none;
   border-radius: none;
   border: none;
@@ -7,13 +7,13 @@
   font-size: 2rem;
 
 
-  &:focus, &:focus + .solution__button {
+  &:focus, &:focus + .solution__button, &:focus + .cancel__button {
     border-bottom-color: $primary;
     outline: none;
   }
 }
 
-.solution__button {
+.solution__button, .cancel__button {
   background: none;
   border: none;
   border-bottom: 2px solid $light;
@@ -28,4 +28,8 @@
     color: $primary;
   }
 
+}
+
+.cancel__button {
+  font-size: 1.7rem;
 }

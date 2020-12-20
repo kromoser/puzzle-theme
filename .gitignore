@@ -5,3 +5,5 @@ node_modules
 dist
 
 templates/config
+
+.DS_Store
