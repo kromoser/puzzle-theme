@@ -1,0 +1,47 @@
+{% set apiKey = 'AIzaSyAGuwZpWRtgkC9LFEjDPUw8T1PwH_l7_4Y'%}
+
+{% extends "base.twig" %}
+
+{% block content %}
+  <div class="map" id="map-container">
+
+  </div>
+	<div class="content-wrapper col-6 mr-auto map__overlay p-3">
+		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+			<section class="article-content">
+				<h1 class="article-h1">{{post.title}}</h1>
+				<div class="article-body">
+					{{post.content}}
+				</div>
+			</section>
+		</article>
+
+		{% include "partial/components/solution.twig" with {'size' : 'full'} %}
+	</div><!-- /content-wrapper -->
+
+  <!-- Include the Google Maps API library - required for embedding maps -->
+  <script defer
+      src="https://maps.googleapis.com/maps/api/js?key={{apiKey}}&map_ids=4560795f5b32c804&callback=initMap">
+  </script>
+
+  <script type="text/javascript">
+
+    let map;
+
+    function initMap() {
+      const latLng = { lat: 40.69180540869296, lng: -73.98328298946461 };
+      map = new google.maps.Map(document.getElementById("map-container"), {
+        center: { lat: 40.69087270773646, lng: -73.98484973207064 },
+        zoom: 18,
+        //styles: styles,
+        mapId: "4560795f5b32c804",
+      });
+      new google.maps.Marker({
+        position: latLng,
+        map,
+        label: "🧩",
+      });
+    }
+
+  </script>
+{% endblock %}
