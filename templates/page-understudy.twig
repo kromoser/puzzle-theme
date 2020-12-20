@@ -1,4 +1,5 @@
-{% set apiKey = 'AIzaSyAGuwZpWRtgkC9LFEjDPUw8T1PwH_l7_4Y'%}
+
+{% import "config/keys.twig" as keys %}
 
 {% extends "base.twig" %}
 
@@ -21,7 +22,7 @@
 
   <!-- Include the Google Maps API library - required for embedding maps -->
   <script defer
-      src="https://maps.googleapis.com/maps/api/js?key={{apiKey}}&map_ids=4560795f5b32c804&callback=initMap">
+      src="https://maps.googleapis.com/maps/api/js?key={{keys.map_key}}&map_ids=4560795f5b32c804&callback=initMap">
   </script>
 
   <script type="text/javascript">
