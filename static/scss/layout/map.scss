@@ -14,7 +14,8 @@
 
 .map-label {
   margin: 0;
-  font-size: 100%;
+  font-size: .95rem;
+  opacity: 0.5;
 }
 
 .gm-style-iw, .gm-style-iw:after, .gm-style-iw-c, .gm-style-iw-c:after, .gm-style-iw-t, .gm-style-iw-t:after, .gm-style-iw-d, .gm-style-iw-d:after  {
@@ -30,4 +31,9 @@
 
 .gm-style-iw-d {
   overflow: auto !important;
+}
+
+.gm-style-iw.gm-style-iw-c {
+    top: 4rem;
+    left: 3.75rem;
 }

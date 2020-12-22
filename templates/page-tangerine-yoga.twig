@@ -10,7 +10,7 @@
   <div class="col-12 d-block d-md-none" style="height: 50vh; z-index: -1;">
 
   </div>
-	<div class="content-wrapper col-12 col-md-6 mr-auto map__overlay p-3">
+	<div class="content-wrapper col-12 col-md-7 mr-auto map__overlay p-3">
 		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
 			<section class="article-content">
 				<h1 class="article-h1">{{post.title}}</h1>
@@ -38,13 +38,16 @@
 
       map = new google.maps.Map(document.getElementById("map-container"), {
         center: latLng,
-        zoom: 18,
+        zoom: 19,
         //styles: styles,
         mapId: "4560795f5b32c804",
+        zoomControl: false,
+        minZoom: 19,
+        maxZoom: 19,
       });
 
       var marker = new google.maps.Marker({
-        position: { lat: 40.6799786964414, lng: -73.9922611675729 },
+        position: { lat: 40.6799786964414, lng: -73.9921611675729 },
         map,
         label: "🐝"
       });

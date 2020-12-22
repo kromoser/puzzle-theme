@@ -175,7 +175,7 @@ function puzzle_scripts() {
 	// Note that we aren't using WordPress' default style.css, and instead enqueueing the file of compiled Sass.
 	wp_enqueue_style( 'my-styles', get_template_directory_uri() . '/dist/puzzle.css', 1.0);
 	wp_enqueue_script( 'my-js', get_template_directory_uri() . '/static/js/puzzle.js', array('jquery'), '1.0.0', true );
-	//wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/dist/bootstrap.min.js', array('jquery'), '1.0.0', true );
+	wp_enqueue_script( 'bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js', array('jquery'), '1.0.0', true );
 }
 
 add_action( 'wp_enqueue_scripts', 'puzzle_scripts' );
