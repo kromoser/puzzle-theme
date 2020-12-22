@@ -1,9 +1,9 @@
 <div class="solution {% if size != 'full' %}col-lg-6 col-md-8 col-sm-10 {% endif %}col-12 mx-auto pt-5 mt-5 row mb-5">
-  <input type="text" name="" value="" placeholder="Your answer" class="{% if cancel == 'true' %}col-9 {% else %}col-10 {% endif %} solution__input px-0">
+  <input type="text" name="" value="" placeholder="Your answer" class="{% if cancel == 'true' %}col-10 {% else %}col-11 {% endif %} solution__input px-0">
 
   {% if cancel == 'true' %}
-    <button type="cancel" name="button" class="col-1 cancel__button">×</button>
+    <button type="cancel" name="button" class="col-1 input__button cancel__button ml-auto">×</button>
   {% endif %}
 
-  <button type="submit" name="button" class="col-2 solution__button">⇨</button>
+  <button type="submit" name="button" class="col-1 input__button solution__button ml-auto">⇨</button>
 </div>

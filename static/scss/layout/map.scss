@@ -8,5 +8,26 @@
 }
 
 .map__overlay {
-  background-color: rgba($black, 0.8);
+  background-color: rgba($black, 0.9);
+}
+
+
+.map-label {
+  margin: 0;
+  font-size: 100%;
+}
+
+.gm-style-iw, .gm-style-iw:after, .gm-style-iw-c, .gm-style-iw-c:after, .gm-style-iw-t, .gm-style-iw-t:after, .gm-style-iw-d, .gm-style-iw-d:after  {
+  background: rgba(0,0,0,0) !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+
+}
+
+.gm-style-iw button {
+  display: none !important;
+}
+
+.gm-style-iw-d {
+  overflow: auto !important;
 }

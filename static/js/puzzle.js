@@ -40,6 +40,50 @@ document.addEventListener('DOMContentLoaded', function() {
     letter.addEventListener('click', function(e) {
       solutionInput.value += letter.textContent;
     })
+  });
+
+  // Input mask handling and hex highlighting
+  const buttons = document.querySelectorAll('polygon, text');
+
+  const firstHexGroup = document.querySelectorAll('.hex-1');
+  const secondHexGroup = document.querySelectorAll('.hex-2');
+  const thirdHexGroup = document.querySelectorAll('.hex-3');
+
+  function highlightHexGroup(hexGroup) {
+    hexGroup.forEach(function(el) {
+      el.classList.add('opaque');
+    })
+  }
+
+  highlightHexGroup(firstHexGroup);
+
+  buttons.forEach(function(button) {
+    button.addEventListener('click', function() {
+     hexes.forEach(function(el) {
+       el.classList.remove('opaque')
+     })
+     if (solutionInput.value.length === 9) {
+        solutionInput.value += ' ';
+      } else if (solutionInput.value.length === 18 ) {
+        solutionInput.value += ' ';
+      }
+
+     if ( solutionInput.value.length < 9 ) {
+       highlightHexGroup(firstHexGroup);
+     } else if ( solutionInput.value.length < 18 ) {
+       highlightHexGroup(secondHexGroup);
+     } else {
+       highlightHexGroup(thirdHexGroup);
+     }
+
+    })
+  });
+
+  // Hex highlighting
+  hexes.forEach(function(hex) {
+    hex.addEventListener('click', function(e) {
+
+    })
   })
 
 

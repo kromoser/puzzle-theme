@@ -7,7 +7,7 @@
   font-size: 2rem;
 
 
-  &:focus, &:focus + .solution__button, &:focus + .cancel__button {
+  &:focus, &:focus ~ .input__button  {
     border-bottom-color: $primary;
     outline: none;
   }
