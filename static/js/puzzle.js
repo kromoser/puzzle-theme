@@ -12,6 +12,15 @@ document.addEventListener('DOMContentLoaded', function() {
   const cancelButton = document.querySelector('.cancel__button');
   const hexes = document.querySelectorAll('polygon');
   const letters = document.querySelectorAll('text');
+  const form = document.querySelector('.solution__form')
+
+  form.addEventListener('submit', function(e) {
+    //form.action = '/' + solutionInput.value.toLowerCase().split(' ').join('-');
+    //
+    e.preventDefault();
+    const solutionValue = solutionInput.value.toLowerCase().split(' ').join('-');
+    solutionValue ? window.location = `/${solutionValue}` : alert("You didn\'t enter a solution")
+  })
 
   // Solution handling
   solutionButton.addEventListener('click', function(e) {

@@ -1,9 +1,12 @@
 <div class="solution {% if size != 'full' %}col-lg-6 col-md-8 col-sm-10 {% endif %}col-12 mx-auto pt-5 mt-5 row mb-5">
+<form class="solution__form col-12 row" action="" method="post">
   <input type="text" name="" value="" placeholder="Your answer" class="{% if cancel == 'true' %}col-10 {% else %}col-11 {% endif %} solution__input px-0">
 
   {% if cancel == 'true' %}
-    <button type="cancel" name="button" class="col-1 input__button cancel__button ml-auto">×</button>
+    <button type="cancel" name="button" class="col-1 input__button cancel__button p-0">×</button>
   {% endif %}
 
-  <button type="submit" name="button" class="col-1 input__button solution__button ml-auto">⇨</button>
+  <button type="submit" name="button" class="col-1 input__button solution__button p-0">⇨</button>
+</form>
+
 </div>
